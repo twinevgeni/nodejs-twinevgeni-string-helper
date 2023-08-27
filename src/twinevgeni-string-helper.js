@@ -1,3 +1,5 @@
+const EMPTY_STRING = "";
+
 module.exports = function () {
     function splitMulti(str, tokens) {
         let tempChar = tokens[0];
@@ -51,12 +53,12 @@ module.exports = function () {
 
         return str;
     }
-
     return {
         splitMulti: splitMulti,
         replaceAll: replaceAll,
         stringToBoolean: stringToBoolean,
         isNumeric: isNumeric,
-        trimSymbol: trimSymbol
+        trimSymbol: trimSymbol,
+        EMPTY: EMPTY_STRING
     }
 }();
