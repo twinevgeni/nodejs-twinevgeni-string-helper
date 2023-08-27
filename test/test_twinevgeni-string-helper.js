@@ -1,5 +1,5 @@
 const assert = require('assert');
-const stringHelper = require('../../src/helpers/string')
+const stringHelper = require('../src/twinevgeni-string-helper')
 
 describe('StringHelperTest', function () {
 

@@ -1,11 +1,2 @@
 node_modules
 .idea
-/debug.log
-/.env
-/.env.*
-log/log.txt
-log/screens/*.png
-log/screens/*.html
-log/screens/*/*.png
-log/screens/*/*.html
-/config/config.back.js
