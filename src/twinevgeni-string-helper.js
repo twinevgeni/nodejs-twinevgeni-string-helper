@@ -55,7 +55,7 @@ module.exports = function () {
     }
 
     function isEmpty(str) {
-        return str === null && str === 'undefined' && str.length === 0
+        return str === null || str === 'undefined' || str.length === 0
     }
 
     function isNotEmpty(str) {
