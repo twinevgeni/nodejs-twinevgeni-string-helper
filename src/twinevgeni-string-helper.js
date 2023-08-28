@@ -53,12 +53,24 @@ module.exports = function () {
 
         return str;
     }
+
+    function isEmpty(str) {
+        return str === null && str === 'undefined' && str.length === 0
+    }
+
+    function isNotEmpty(str) {
+        return !isEmpty(str);
+    }
+
     return {
         splitMulti: splitMulti,
         replaceAll: replaceAll,
         stringToBoolean: stringToBoolean,
         isNumeric: isNumeric,
         trimSymbol: trimSymbol,
+        isEmpty: isEmpty,
+        isNotEmpty: isNotEmpty,
+
         EMPTY: EMPTY_STRING
     }
 }();
