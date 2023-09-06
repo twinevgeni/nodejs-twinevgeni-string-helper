@@ -26,6 +26,10 @@ module.exports = function () {
         return !isNaN(num)
     }
 
+    function stringToNumber(string) {
+        return Number(string);
+    }
+
     function trimSymbol(str, symbol = ' ', start = true, end = true) {
         if (start) {
             let i;
@@ -65,11 +69,15 @@ module.exports = function () {
     return {
         splitMulti: splitMulti,
         replaceAll: replaceAll,
-        stringToBoolean: stringToBoolean,
-        isNumeric: isNumeric,
+
         trimSymbol: trimSymbol,
+
+        isNumeric: isNumeric,
         isEmpty: isEmpty,
         isNotEmpty: isNotEmpty,
+
+        stringToBoolean: stringToBoolean,
+        stringToNumber: stringToNumber,
 
         EMPTY: EMPTY_STRING
     }

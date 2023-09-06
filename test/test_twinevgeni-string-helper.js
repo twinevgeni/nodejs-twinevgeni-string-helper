@@ -9,10 +9,6 @@ describe('StringHelperTest', function () {
     afterEach(async function () {
     });
 
-    /**
-     * splitMultiData - test data provider
-     * @returns {({result: [string], src: string, delimiters: [string, string]}|{result: [string, string, string], src: string, delimiters: [string, string]}|{result: [string, string, string], src: string, delimiters: [string]})[]}
-     */
     function splitMultiData() {
         return [
             {
@@ -33,10 +29,6 @@ describe('StringHelperTest', function () {
         ];
     }
 
-    /**
-     * splitMultiTest
-     * @param data
-     */
     function splitMultiTest(data = splitMultiData()) {
         for (let i = 0; i < data.length; i++) {
             const dataRow = data[i];
@@ -53,8 +45,81 @@ describe('StringHelperTest', function () {
         }
     }
 
-    /**
-     * start test suite
-     */
     splitMultiTest();
+
+    function replaceAllTestData() {
+        return [
+            {
+                src: "a,b,c",
+                search: "a",
+                replace: "a1",
+                expected: "a1,b,c"
+
+            },
+            {
+                src: "a,a,a,b",
+                search: "a",
+                replace: "a2",
+                expected: "a2,a2,a2,b"
+            }
+        ]
+    }
+
+    function replaceAllTest(data = replaceAllTestData()) {
+        for (const dataRow of data) {
+            const testName = `replaceAllTest | src: ${dataRow.src} | search: ${dataRow.search} | replace: ${dataRow.replace}`;
+            it(testName, function () {
+                const resultActual = stringHelper.replaceAll(dataRow.src, dataRow.search, dataRow.replace);
+                assert.strictEqual(resultActual, dataRow.expected);
+            });
+        }
+    }
+
+    replaceAllTest();
+
+    function trimSymbolTestData() {
+        return [
+            {
+                src: "  text   ",
+                symbol: " ",
+                start: true,
+                end: true,
+                expected: "text"
+            },
+            {
+                src: "  text   ",
+                symbol: " ",
+                start: false,
+                end: true,
+                expected: "  text"
+            },
+            {
+                src: "  text   ",
+                symbol: " ",
+                start: true,
+                end: false,
+                expected: "text   "
+            },
+            {
+                src: "  text   ",
+                symbol: " ",
+                start: false,
+                end: false,
+                expected: "  text   "
+            },
+        ]
+    }
+
+    function trimSymbolTest(data = trimSymbolTestData()) {
+        for (const dataRow of data) {
+            const testName = `trimSymbolTest | src: ${dataRow.src} | symbol: ${dataRow.symbol} | start: ${dataRow.start} | end: ${dataRow.end}`;
+            it(testName, function () {
+                const resultActual = stringHelper.trimSymbol(dataRow.src, dataRow.symbol, dataRow.start, dataRow.end);
+                assert.strictEqual(resultActual, dataRow.expected);
+            });
+        }
+    }
+
+    trimSymbolTest();
+
 });
