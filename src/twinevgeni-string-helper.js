@@ -23,11 +23,11 @@ module.exports = function () {
     }
 
     function isNumeric(num){
-        return !isNaN(num)
+        return isNotEmpty(num) && !isNaN(num);
     }
 
     function stringToNumber(string) {
-        return Number(string);
+        return Number(string)
     }
 
     function trimSymbol(str, symbol = ' ', start = true, end = true) {
@@ -59,7 +59,7 @@ module.exports = function () {
     }
 
     function isEmpty(str) {
-        return str === null || str === 'undefined' || str.length === 0;
+        return str === null || str === undefined || str.length === 0;
     }
 
     function isNotEmpty(str) {
@@ -72,9 +72,9 @@ module.exports = function () {
 
         trimSymbol: trimSymbol,
 
-        isNumeric: isNumeric,
         isEmpty: isEmpty,
         isNotEmpty: isNotEmpty,
+        isNumeric: isNumeric,
 
         stringToBoolean: stringToBoolean,
         stringToNumber: stringToNumber,

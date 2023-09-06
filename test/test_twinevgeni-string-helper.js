@@ -122,4 +122,35 @@ describe('StringHelperTest', function () {
 
     trimSymbolTest();
 
+    it('isEmptyTest', function () {
+        assert.strictEqual(stringHelper.isEmpty(null), true);
+        assert.strictEqual(stringHelper.isEmpty(), true);
+        assert.strictEqual(stringHelper.isEmpty(undefined), true);
+        assert.strictEqual(stringHelper.isEmpty(""), true);
+        assert.strictEqual(stringHelper.isEmpty("abc"), false);
+    });
+
+    it('isNotEmptyTest', function() {
+        assert.strictEqual(stringHelper.isNotEmpty(null), false);
+        assert.strictEqual(stringHelper.isNotEmpty(), false);
+        assert.strictEqual(stringHelper.isNotEmpty(undefined), false);
+        assert.strictEqual(stringHelper.isNotEmpty(""), false);
+        assert.strictEqual(stringHelper.isNotEmpty("abc"), true);
+        assert.strictEqual(stringHelper.isNotEmpty("abc fdgf fdfd"), true);
+        assert.strictEqual(stringHelper.isNotEmpty("null"), true);
+    })
+
+    it('isNumericTest', function() {
+        assert.strictEqual(stringHelper.isNumeric("123"), true);
+        assert.strictEqual(stringHelper.isNumeric("150001234"), true);
+        assert.strictEqual(stringHelper.isNumeric("123A"), false);
+        assert.strictEqual(stringHelper.isNumeric(null), false);
+        assert.strictEqual(stringHelper.isNumeric(""), false);
+        assert.strictEqual(stringHelper.isNumeric(undefined), false);
+    })
+
+    it('EMPTY_Test', function() {
+        assert.strictEqual(stringHelper.EMPTY, "");
+    })
+
 });

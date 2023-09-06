@@ -1,6 +1,6 @@
 {
   "name": "twinevgeni-string-helper",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Evgenii Izhboldin @twinevgeni",
   "main": "index.js",
   "devDependencies": {
