@@ -1,1 +1,1 @@
-module.exports = require('./src/twinevgeni-string-helper')
+module.exports = require('./dist/twinevgeni-string-helper')

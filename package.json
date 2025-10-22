@@ -1,13 +1,17 @@
 {
   "name": "twinevgeni-string-helper",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "author": "Evgenii Izhboldin @twinevgeni",
   "main": "index.js",
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^10.2.0"
-  },
+  "types": "dist/twinevgeni-string-helper.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "mocha"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "chai": "^4.2.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
   }
 }
